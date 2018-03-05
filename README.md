@@ -1,1 +1,1 @@
-# Educatio and Poverty
+# Education and Poverty

@@ -27,6 +27,7 @@ var svg = d3
     .attr("width", svgWidth)
 
     // Append a group to the SVG area and shift ('translate') it to the right and to the bottom
+var chart = svg
     .append("g")
     .attr("transform", "translate(" + chartMargin.left + ", " + chartMargin.top + ")");
 
@@ -80,7 +81,7 @@ d3.csv(dataFile, function(error, demoData) {
     // // Create one SVG rectangle per piece of demoData
     // // Use the linear scales to position each rectangle within the chart
     // svg
-    //     .selectAll(".bar")
+    //     .selectAll(".chart")
     //     .data(demoData)
     //     .enter()
     //     .append("rect")
@@ -96,10 +97,23 @@ d3.csv(dataFile, function(error, demoData) {
     //         return chartHeight - yLinearScale(data.hours);
     //     });
 
+    // Add markers
+    var circles = chart
+        .selectAll("circle")
+        .data(demoData)
+        .enter()
+        .append("circle")
+        .attr("cx", (data, index) => xLinearScale(poverty[index]))
+        .attr("cy", (data, index)  => yLinearScale(education[index]))
+        .attr("r", "10")
+        .attr("stroke", "steelblue")
+        .attr("fill", "steelblue")
+        .attr("fill-opacity", 0.25);
+
     // Append two SVG group elements to the SVG area, create the bottom and left axes inside of them
-    svg.append("g")
+    chart.append("g")
         .call(leftAxis);
-    svg.append("g")
+    chart.append("g")
         .attr("transform", "translate(0, " + chartHeight + ")")
         .call(bottomAxis);
 });

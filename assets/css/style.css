@@ -3,7 +3,7 @@
   /* border: 1px solid #e3e3e3; */
   position: relative;
   overflow: hidden;
-  width: 1000px;
+  width: 1010px;
   height: 600px;
 }
 
@@ -28,7 +28,7 @@
 .frame-area {
   display: block;
   width: 100%;  /* RESPONSIVE WIDTH */
-  max-width: 1000px;
+  max-width: 1010px;
   height: 600px;
   overflow: hidden;
   margin: 0px;

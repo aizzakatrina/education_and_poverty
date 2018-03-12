@@ -104,14 +104,34 @@ d3.csv(dataFile, function(error, demoData) {
     chart.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 0 - chartMargin.left)
-        .attr("x", 0 - (chartHeight / 1.5))
+        .attr("x", 0 - (chartHeight / 2))
         .attr("dy", "1em")
         .attr("class", "axisText")
         .text("Lacks Secondary Education (%)");
 
     // Append x-axis labels
     chart.append("text")
-        .attr("transform", "translate(" + (chartWidth / 2.5) + " ," + (chartHeight + chartMargin.top -5 ) + ")")
+        .attr("transform", "translate(" + (chartWidth / 2) + " ," + (chartHeight + chartMargin.top -5 ) + ")")
         .attr("class", "axisText")
         .text("Below Poverty (%)");
+
+     // Create the tooltip function
+     var toolTip = d3
+     .tip()
+     .attr("class", "tooltip")
+     .offset([80, 5])
+     .html(function(data) {
+         var state = data.state;
+         var educationPercent = data.lacks_secondary_education;
+         var povertyPercent = data.below_poverty;
+         return (state + "<br>Education: " + educationPercent + "% <br>Poverty: " + povertyPercent + "%");
+     });
+    // Call the tooltip function
+    chart.call(toolTip);
+    circles
+        // mouseover event to display the tooltip
+        .on("mouseover", toolTip.show)
+        // mouseout event to hide the tooltip
+        .on("mouseout", toolTip.hide);
+
 });

@@ -3,8 +3,8 @@
   border: 1px solid #e3e3e3;
   position: relative;
   overflow: hidden;
-  width: 700px;
-  height: 900px;
+  width: 1000px;
+  height: 700px;
 }
 
 /* 16x9 Aspect Ratio */
@@ -28,8 +28,8 @@
 .frame-area {
   display: block;
   width: 100%;  /* RESPONSIVE WIDTH */
-  max-width: 400px;
-  height: 300px;
+  max-width: 1000px;
+  height: 700px;
   overflow: hidden;
   margin: 0px;
   padding: 0px;

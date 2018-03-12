@@ -1,10 +1,10 @@
 .iframeContainer {
   padding: 20px;
-  border: 1px solid #e3e3e3;
+  /* border: 1px solid #e3e3e3; */
   position: relative;
   overflow: hidden;
   width: 1000px;
-  height: 700px;
+  height: 500px;
 }
 
 /* 16x9 Aspect Ratio */
@@ -29,7 +29,7 @@
   display: block;
   width: 100%;  /* RESPONSIVE WIDTH */
   max-width: 1000px;
-  height: 700px;
+  height: 500px;
   overflow: hidden;
   margin: 0px;
   padding: 0px;

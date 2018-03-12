@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   width: 1000px;
-  height: 500px;
+  height: 600px;
 }
 
 /* 16x9 Aspect Ratio */
@@ -29,7 +29,7 @@
   display: block;
   width: 100%;  /* RESPONSIVE WIDTH */
   max-width: 1000px;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
   margin: 0px;
   padding: 0px;

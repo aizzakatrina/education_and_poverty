@@ -6,10 +6,10 @@ var svgHeight = 650;
 
 // Define the chart's margins as an object
 var chartMargin = {
-    top: 30,
-    right: 30,
-    bottom: 30,
-    left: 30
+    top: 60,
+    right: 60,
+    bottom: 60,
+    left: 60
 };
 
 // Save file to variable
@@ -26,7 +26,7 @@ var svg = d3
     .attr("height", svgHeight)
     .attr("width", svgWidth)
 
-    // Append a group to the SVG area and shift ('translate') it to the right and to the bottom
+// Append a group to the SVG area and shift ('translate') it to the right and to the bottom
 var chart = svg
     .append("g")
     .attr("transform", "translate(" + chartMargin.left + ", " + chartMargin.top + ")");
@@ -78,25 +78,6 @@ d3.csv(dataFile, function(error, demoData) {
     var bottomAxis = d3.axisBottom(xLinearScale);
     var leftAxis = d3.axisLeft(yLinearScale)
 
-    // // Create one SVG rectangle per piece of demoData
-    // // Use the linear scales to position each rectangle within the chart
-    // svg
-    //     .selectAll(".chart")
-    //     .data(demoData)
-    //     .enter()
-    //     .append("rect")
-    //     .attr("class", "bar")
-    //     .attr("x", function(data) {
-    //         return xLinearScale(data.name);
-    //     })
-    //     .attr("y", function(data) {
-    //         return yLinearScale(data.hours);
-    //     })
-    //     .attr("width", xLinearScale.bandwidth())
-    //     .attr("height", function(data) {
-    //         return chartHeight - yLinearScale(data.hours);
-    //     });
-
     // Add markers
     var circles = chart
         .selectAll("circle")
@@ -111,9 +92,26 @@ d3.csv(dataFile, function(error, demoData) {
         .attr("fill-opacity", 0.25);
 
     // Append two SVG group elements to the SVG area, create the bottom and left axes inside of them
-    chart.append("g")
+    chart
+        .append("g")
         .call(leftAxis);
-    chart.append("g")
+    chart
+        .append("g")
         .attr("transform", "translate(0, " + chartHeight + ")")
         .call(bottomAxis);
+
+    // Append y-axis labels
+    chart.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - chartMargin.left)
+        .attr("x", 0 - (chartHeight / 1.5))
+        .attr("dy", "1em")
+        .attr("class", "axisText")
+        .text("Lacks Secondary Education (%)");
+
+    // Append x-axis labels
+    chart.append("text")
+        .attr("transform", "translate(" + (chartWidth / 2.5) + " ," + (chartHeight + chartMargin.top -5 ) + ")")
+        .attr("class", "axisText")
+        .text("Below Poverty (%)");
 });

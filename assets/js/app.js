@@ -87,8 +87,8 @@ d3.csv(dataFile, function(error, demoData) {
         .attr("cx", (data, index) => xLinearScale(poverty[index]))
         .attr("cy", (data, index)  => yLinearScale(education[index]))
         .attr("r", "10")
-        .attr("stroke", "steelblue")
-        .attr("fill", "steelblue")
+        .attr("stroke", "slateblue")
+        .attr("fill", "slateblue")
         .attr("fill-opacity", 0.25);
 
     // Append two SVG group elements to the SVG area, create the bottom and left axes inside of them

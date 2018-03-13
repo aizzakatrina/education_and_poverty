@@ -1,7 +1,7 @@
 // D3 Scatterplot 
 
 // Define SVG area dimensions
-var svgWidth = 960;
+var svgWidth = 920;
 var svgHeight = 550;
 
 // Define the chart's margins as an object

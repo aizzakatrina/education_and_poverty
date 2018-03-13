@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Education vs. Poverty By State</title>
+	<link rel="stylesheet" href="assets/css/simple-scrollbar.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<!-- Latest compiled and minified CSS & JS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -11,6 +13,7 @@
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <script src="assets/js/simple-scrollbar.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -34,12 +37,58 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-12 col-md-offset-0">
+				<h3 class="colored">Data</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12  col-md-9 col-md-offset-0">
+				<div class="content" ss-container>
+					<!-- Table of data used -->
+					<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>id</th>
+									<th>State</th>  
+									<th>Abbr</th>
+									<th>Lacks Secondary Education</th>
+									<th>Below Poverty</th> 
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<p>Data sources:</p>
+				<p>
+					The Centers for Disease Control and Prevention's<br>
+					<a href="https://chronicdata.cdc.gov/Behavioral-Risk-Factors/BRFSS-2014-Overall/5ra3-ixqq " alt="BRFSS Prevalence Data" target="new_">
+					Behavioral Risk Factor Surveillance System (BRFSS) Prevalence Data</a>
+				</p>
+				<p>
+					U.S. Census Bureau's<br>
+					<a href="https://factfinder.census.gov/faces/nav/jsf/pages/searchresults.xhtml?refresh=t" alt="American Community Survey" target="new_">
+						American Community Survey</a>					
+				</p>
+			</div>
+		</div>
 	</div>
 
-		<!-- Footer-->
 	<div id="footer">
-		<p><!-- Copyright Info --></p>
+		<p>
+			<a href="https://github.com/aizzakatrina/education_and_poverty" alt="on Github" target="new_">
+				[View the code.]</a>
+			<br>
+		</p>
+		<p><br>Built with:
+			<br>
+			<img src="images/d3-summarized.png">
+		</p>
 	</div>
+
+	<script src="assets/js/data.js" type="text/javascript"></script>
+    <script src="assets/js/index.js" type="text/javascript"></script>
 
 </body>
 </html>

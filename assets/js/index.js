@@ -1,10 +1,5 @@
 // Get a reference to the <tbody> element, input field, and button
 var tableBody = document.querySelector("tbody");
-// var timeInput = document.querySelector("#time");
-// var searchButton = document.querySelector("#search");
-
-// Add an event listener to the searchButton, call handleSearchButtonClick when clicked
-// searchButton.addEventListener("click", handleSearchButtonClick);
 
 // Set filterData to dataSet initially
 var filterData = dataSet;
@@ -29,20 +24,5 @@ function renderTable() {
       }
     }
 };
-
-// function handleSearchButtonClick() {
-//   // Format the user's search by removing leading and trailing whitespace
-//   var filterDate = timeInput.value.trim();
-
-//   // Set filterData to an array of all datetimes whose "time" matches the filter
-//   filterData = dataSet.filter(function(stateInfo) {
-//     var dateTime = stateInfo.datetime;
-
-//     // If true, add the address to the filterData, otherwise don't add it to filterData
-//     return dateTime === filterDate;
-//   });
-
-//   renderTable();
-// }
 
 renderTable();

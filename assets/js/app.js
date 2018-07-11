@@ -13,7 +13,7 @@ var chartMargin = {
 };
 
 // Save file to variable
-var dataFile = 'data.csv';
+var dataFile = '../data/data.csv';
 
 // Define dimensions of the chart area
 var chartWidth = svgWidth - chartMargin.left - chartMargin.right;
